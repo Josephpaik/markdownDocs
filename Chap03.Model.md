@@ -86,7 +86,7 @@ profile에 사용하는 모든 상세 필드는 null값 허용이거나 기본�
 이것은 보통 신호(signals)을 통하여 구현된다.
 예를 들면 아래와 같은 신호처리기를 사용하는 사용자 모델의 **post_save** 신호를 듣고 처리하면 된다.
 
-'''python
+```python
 # signals.py
 
 from django.db.models.signals import post_save
@@ -101,7 +101,7 @@ def create_profile_handler(sender, instance, created, **kwargs):
 	# Create the profile object, only if it is newly created
 	profile = models.Profile(user=instance)
 	profile.save()
-'''
+```
 
 profile model은 사용자 인스턴스 외에 아무런 초기변수도 전달하지 않는다.
 
@@ -189,7 +189,7 @@ class Profile(SuperHeroProfile, OrdinaryProfile, BaseProfile):
 	
  ``` 
  
- #패턴 - 서비스 객체#
+#패턴 - 서비스 객체#
  **문제**
  
  >모델들이 커지면 감당 할 수 없게 될수 있다. 한 모델이 하나 이상의 일을 하게 되면 
@@ -199,7 +199,7 @@ class Profile(SuperHeroProfile, OrdinaryProfile, BaseProfile):
  
  >연관된 일련의 메서드들을 특화된 **Service** 객체로 간추려낸다.
 
- #구체적인 문제점#
+#구체적인 문제점#
 '뚱뚱한 모델, 날씬한 뷰'가 장고 초보자를 위한 일반적인 격언이다. 
 이상적인 경우라면, 뷰에는 프리젠테이션 로직외에는 아무것도 담겨있지 않아야 한다.
  
