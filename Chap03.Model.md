@@ -128,7 +128,8 @@ ProfileConfig:
  이렇게 signal을 설정하면 새로운 사용자를 생성할 때도 user.profile에 접근하여 Profile 객체를 얻을수 있다. 
  
  
- #Admin#
+ #Admin#  
+ 
  **UserAdmin**을 아래와 같이 커스터마이징한다.
  
  ```python
